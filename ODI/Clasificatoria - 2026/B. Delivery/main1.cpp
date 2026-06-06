@@ -14,7 +14,8 @@ size_t N;
 vector<package> P; 
 vector< unordered_map<int64_t, int64_t> > memo; 
 
-int64_t dp(size_t i, int64_t w) 
+int64_t 
+dp(size_t i, int64_t w) 
 { 
   if ( w <= 0 || i >= N ) 
   return 0; 
@@ -33,7 +34,8 @@ int64_t dp(size_t i, int64_t w)
   return memo[i][w];
 } 
 
-int32_t main(void) 
+int32_t 
+main(void) 
 { 
   cin >> W >> N; P.resize(N); 
   memo.resize(N);

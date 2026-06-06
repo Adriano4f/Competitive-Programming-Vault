@@ -6,17 +6,20 @@ struct C
 {
   int32_t n = 0, m = 0, k = 0;
 
-  C operator-(const C &other)
+  C 
+  operator-(const C &other)
   {
     return (C){ n - other.n, m - other.m, k - other.k };
   }
 
-  bool operator==(const C &other) const
+  bool 
+  operator==(const C &other) const
   {
     return ( (n == other.n) && (m == other.m) && (k == other.k) );
   }
 
-  bool operator>(const C &other) const
+  bool 
+  operator>(const C &other) const
   {
     return ( (n > other.n) || (m > other.m) || (k > other.k) );
   }
@@ -25,8 +28,7 @@ struct C
 void 
 Input(vector<C> &S);
 
-int32_t 
-main(void)
+int main(void)
 {
   size_t L; cin >> L;
   vector<C> S(L+1);

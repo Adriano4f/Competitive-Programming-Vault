@@ -14,7 +14,8 @@ size_t N;
 vector<package> P;
 vector<vector<int64_t>> memo;
 
-int64_t dp(size_t i, int64_t w)
+int64_t 
+dp(size_t i, int64_t w)
 {
   
   if ( w <= 0 || i >= N )
@@ -35,7 +36,8 @@ int64_t dp(size_t i, int64_t w)
   return memo[i][w2];
 }
 
-int32_t main(void)
+int32_t 
+main(void)
 {
   cin >> W >> N;
 
