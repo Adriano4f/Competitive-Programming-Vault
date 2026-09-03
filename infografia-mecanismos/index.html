@@ -1,0 +1,375 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=1080">
+<title>Máquinas, Mecanismos y Movimientos — Infografía</title>
+<style>
+  :root {
+    --bg: #eef2f7;
+    --paper: #ffffff;
+    --ink: #1c2333;
+    --muted: #4a5568;
+    --primary: #1e4e8c;
+    --primary-dark: #143a6b;
+    --accent: #e07a1f;
+    --accent-soft: #fff3e6;
+    --green: #2f855a;
+    --green-soft: #e9f7ef;
+    --purple: #6b46c1;
+    --purple-soft: #f1ecfb;
+    --teal: #0f7c8c;
+    --teal-soft: #e6f6f8;
+    --line: #d5dce6;
+  }
+  * { box-sizing: border-box; }
+  html, body { margin: 0; padding: 0; }
+  body {
+    background: var(--bg);
+    color: var(--ink);
+    font-family: "Segoe UI", "Helvetica Neue", Arial, sans-serif;
+    line-height: 1.45;
+    -webkit-print-color-adjust: exact;
+    print-color-adjust: exact;
+  }
+  .poster {
+    width: 1080px;
+    margin: 24px auto;
+    background: var(--paper);
+    border-radius: 18px;
+    box-shadow: 0 10px 40px rgba(20, 40, 80, 0.15);
+    overflow: hidden;
+  }
+
+  /* Header */
+  header {
+    background: linear-gradient(135deg, var(--primary-dark) 0%, var(--primary) 60%, #2c6cb0 100%);
+    color: #fff;
+    padding: 44px 56px 40px;
+    position: relative;
+  }
+  header .gears {
+    position: absolute; right: 44px; top: 30px;
+    font-size: 84px; line-height: 1; opacity: 0.95;
+  }
+  header h1 {
+    margin: 0;
+    font-size: 40px;
+    letter-spacing: 1px;
+    font-weight: 800;
+    line-height: 1.15;
+    max-width: 760px;
+  }
+  header .sub {
+    display: inline-block;
+    margin-top: 16px;
+    background: var(--accent);
+    color: #fff;
+    padding: 8px 18px;
+    border-radius: 999px;
+    font-weight: 700;
+    font-size: 18px;
+    letter-spacing: 0.5px;
+  }
+
+  main { padding: 36px 56px 24px; }
+
+  section { margin-bottom: 34px; break-inside: avoid; }
+  .sec-title {
+    display: flex; align-items: center; gap: 14px;
+    margin: 0 0 16px;
+  }
+  .sec-title .num {
+    flex: 0 0 auto;
+    width: 44px; height: 44px; border-radius: 50%;
+    background: var(--primary); color: #fff;
+    display: flex; align-items: center; justify-content: center;
+    font-weight: 800; font-size: 20px;
+  }
+  .sec-title h2 {
+    margin: 0; font-size: 24px; font-weight: 800; color: var(--primary-dark);
+    text-transform: uppercase; letter-spacing: 0.5px;
+  }
+
+  .card {
+    background: #f7f9fc;
+    border: 1px solid var(--line);
+    border-left: 6px solid var(--primary);
+    border-radius: 12px;
+    padding: 18px 22px;
+  }
+  .card p { margin: 0 0 10px; font-size: 17px; }
+  .card p:last-child { margin-bottom: 0; }
+
+  .highlight {
+    display: flex; gap: 16px; align-items: flex-start;
+    background: var(--accent-soft);
+    border: 2px solid var(--accent);
+    border-radius: 12px;
+    padding: 16px 20px;
+    margin-top: 16px;
+  }
+  .highlight .icon { font-size: 36px; line-height: 1; }
+  .highlight strong { color: #9a4d00; font-size: 18px; }
+  .highlight p { margin: 4px 0 0; font-size: 16px; }
+
+  .grid-2 { display: grid; grid-template-columns: 1fr 1fr; gap: 20px; }
+
+  /* Tables */
+  table {
+    width: 100%;
+    border-collapse: separate;
+    border-spacing: 0;
+    border: 1px solid var(--line);
+    border-radius: 12px;
+    overflow: hidden;
+    font-size: 16px;
+  }
+  thead th {
+    background: var(--primary);
+    color: #fff;
+    text-align: left;
+    padding: 12px 16px;
+    font-size: 15px;
+    text-transform: uppercase;
+    letter-spacing: 0.6px;
+  }
+  tbody td {
+    padding: 13px 16px;
+    border-top: 1px solid var(--line);
+    vertical-align: top;
+    background: #fff;
+  }
+  tbody tr:nth-child(even) td { background: #f5f8fc; }
+  td.key { font-weight: 700; color: var(--primary-dark); white-space: nowrap; }
+  td .emoji { font-size: 22px; margin-right: 8px; vertical-align: middle; }
+  .arrow { color: var(--accent); font-weight: 800; }
+
+  .note {
+    margin: 0 0 14px;
+    font-size: 16px;
+    color: var(--muted);
+    font-style: italic;
+  }
+
+  /* Flow (bicicleta) */
+  .flow {
+    display: flex; align-items: stretch; gap: 10px; margin-top: 18px;
+  }
+  .flow .step {
+    flex: 1;
+    background: #fff;
+    border: 2px solid var(--teal);
+    border-radius: 12px;
+    padding: 14px 12px;
+    text-align: center;
+  }
+  .flow .step .emoji { font-size: 40px; display: block; margin-bottom: 6px; }
+  .flow .step strong { display: block; font-size: 17px; color: var(--teal); }
+  .flow .step span { font-size: 14px; color: var(--muted); text-transform: uppercase; letter-spacing: 0.5px; }
+  .flow .arr {
+    display: flex; align-items: center; font-size: 34px; color: var(--accent); font-weight: 800;
+  }
+
+  /* Purpose list */
+  .tiles {
+    display: grid; grid-template-columns: repeat(5, 1fr); gap: 12px;
+  }
+  .tile {
+    background: var(--purple-soft);
+    border: 1px solid #d6c9f2;
+    border-radius: 12px;
+    padding: 14px 10px;
+    text-align: center;
+  }
+  .tile .emoji { font-size: 34px; display: block; margin-bottom: 6px; }
+  .tile strong { display: block; color: var(--purple); font-size: 15px; line-height: 1.25; }
+  .tile span { font-size: 14px; color: var(--muted); display: block; margin-top: 4px; }
+
+  .tags { margin-top: 16px; display: flex; gap: 12px; align-items: center; font-size: 16px; }
+  .tag {
+    background: var(--green-soft);
+    border: 1px solid var(--green);
+    color: var(--green);
+    padding: 6px 14px; border-radius: 999px; font-weight: 700;
+  }
+
+  /* Fun fact */
+  .fact {
+    display: flex; gap: 22px; align-items: center;
+    background: linear-gradient(135deg, #fff8ec 0%, #fdefd6 100%);
+    border: 2px dashed var(--accent);
+    border-radius: 14px;
+    padding: 22px 26px;
+  }
+  .fact .icon { font-size: 64px; line-height: 1; }
+  .fact h2 { margin: 0 0 6px; font-size: 22px; color: #9a4d00; text-transform: uppercase; }
+  .fact p { margin: 0; font-size: 17px; }
+
+  footer {
+    background: var(--primary-dark);
+    color: #dbe6f5;
+    text-align: center;
+    padding: 14px;
+    font-size: 14px;
+    letter-spacing: 0.5px;
+  }
+
+  /* SVG icons */
+  svg.icon-svg { width: 28px; height: 28px; vertical-align: middle; margin-right: 8px; }
+
+  @media print {
+    @page { size: 1120px auto; margin: 0; }
+    body { background: #fff; }
+    .poster { margin: 0 auto; box-shadow: none; border-radius: 0; }
+    section, .card, table, .fact { break-inside: avoid; page-break-inside: avoid; }
+  }
+</style>
+</head>
+<body>
+<div class="poster">
+  <header>
+    <div class="gears" aria-hidden="true">⚙️</div>
+    <h1>MÁQUINAS, MECANISMOS Y MOVIMIENTOS</h1>
+    <div class="sub">Clase: Mecanismos</div>
+  </header>
+
+  <main>
+    <!-- 1 -->
+    <section>
+      <div class="sec-title"><div class="num">1</div><h2>¿Qué es una máquina?</h2></div>
+      <div class="card">
+        <p>🛠️ <strong>Dispositivo creado por el ser humano</strong> para facilitar el trabajo y reducir el esfuerzo.</p>
+        <p>⚡ <strong>Necesita energía</strong> para funcionar, la <strong>transmite o transforma</strong>, y produce distintos efectos: movimiento, sonido, luz y calor.</p>
+      </div>
+      <div class="highlight">
+        <div class="icon">💪</div>
+        <div>
+          <strong>Ventaja mecánica</strong> = reducción del esfuerzo que logra la máquina.
+          <p>A <strong>mayor ventaja mecánica</strong>, <strong>menos fuerza</strong> se necesita.</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- 2 -->
+    <section>
+      <div class="sec-title"><div class="num">2</div><h2>Clasificación de las máquinas</h2></div>
+      <table>
+        <thead><tr><th>Criterio</th><th>Tipos</th></tr></thead>
+        <tbody>
+          <tr><td class="key"><span class="emoji">🔢</span>Nº de pasos</td><td><span class="arrow">→</span> Simples o compuestas</td></tr>
+          <tr><td class="key"><span class="emoji">🧩</span>Nº de piezas</td><td><span class="arrow">→</span> Sencillas o complejas</td></tr>
+          <tr><td class="key"><span class="emoji">🔋</span>Tipo de energía</td><td><span class="arrow">→</span> Mecánicas, hidráulicas, eléctricas</td></tr>
+        </tbody>
+      </table>
+    </section>
+
+    <!-- 3 -->
+    <section>
+      <div class="sec-title"><div class="num">3</div><h2>Máquinas simples</h2></div>
+      <p class="note">Las 3 más usadas. Todas usan el <strong>aumento de la distancia</strong> para reducir el esfuerzo.</p>
+      <table>
+        <thead><tr><th style="width:22%">Máquina</th><th>Qué hace</th><th style="width:28%">Ejemplos</th></tr></thead>
+        <tbody>
+          <tr>
+            <td class="key"><span class="emoji">📐</span>Plano inclinado</td>
+            <td>Reduce el esfuerzo al elevar un objeto aumentando la distancia recorrida.</td>
+            <td>Rampas, cuñas, tornillos</td>
+          </tr>
+          <tr>
+            <td class="key"><span class="emoji">⚖️</span>Palanca</td>
+            <td>Reduce el esfuerzo aumentando la distancia desde un punto de apoyo.</td>
+            <td>Tijeras, pinzas, balanza</td>
+          </tr>
+          <tr>
+            <td class="key"><span class="emoji">🛞</span>Rueda</td>
+            <td>Mecanismo circular que rota sobre un eje transmitiendo/transformando movimiento.</td>
+            <td>Poleas, engranajes, tornos</td>
+          </tr>
+        </tbody>
+      </table>
+    </section>
+
+    <!-- 4 -->
+    <section>
+      <div class="sec-title"><div class="num">4</div><h2>¿Qué es un mecanismo?</h2></div>
+      <div class="card" style="border-left-color: var(--teal);">
+        <p>Elementos de una máquina capaces de <strong>transmitir y transformar movimientos y fuerzas</strong> desde un <strong>elemento motriz o conductor</strong> hasta un <strong>elemento conducido</strong>.</p>
+      </div>
+      <div class="flow">
+        <div class="step"><span class="emoji">🦶</span><strong>Pedales</strong><span>Conductor</span></div>
+        <div class="arr">➜</div>
+        <div class="step"><span class="emoji">⛓️</span><strong>Piñones y cadenas</strong><span>Mecanismo</span></div>
+        <div class="arr">➜</div>
+        <div class="step"><span class="emoji">🚲</span><strong>Rueda</strong><span>Conducido</span></div>
+      </div>
+      <p class="note" style="margin-top:10px;text-align:center;">Ejemplo: la bicicleta</p>
+    </section>
+
+    <!-- 5 -->
+    <section>
+      <div class="sec-title"><div class="num">5</div><h2>Los 4 tipos de movimiento</h2></div>
+      <table>
+        <thead><tr><th style="width:24%">Movimiento</th><th>Trayectoria</th><th style="width:34%">Ejemplo</th></tr></thead>
+        <tbody>
+          <tr>
+            <td class="key">
+              <svg class="icon-svg" viewBox="0 0 24 24" fill="none" stroke="#1e4e8c" stroke-width="2.5" stroke-linecap="round"><line x1="3" y1="12" x2="21" y2="12"/><polyline points="16,7 21,12 16,17"/></svg>Lineal
+            </td>
+            <td>Línea recta</td><td>Polea que sube un peso</td>
+          </tr>
+          <tr>
+            <td class="key">
+              <svg class="icon-svg" viewBox="0 0 24 24" fill="none" stroke="#1e4e8c" stroke-width="2.5" stroke-linecap="round"><line x1="4" y1="12" x2="20" y2="12"/><polyline points="8,8 4,12 8,16"/><polyline points="16,8 20,12 16,16"/></svg>Alternativo
+            </td>
+            <td>Línea de avance y retroceso</td><td>Hoja de una sierra de calar</td>
+          </tr>
+          <tr>
+            <td class="key">
+              <svg class="icon-svg" viewBox="0 0 24 24" fill="none" stroke="#1e4e8c" stroke-width="2.5" stroke-linecap="round"><path d="M20 12a8 8 0 1 1-2.3-5.7"/><polyline points="17,3 18,7 22,6"/></svg>Rotación
+            </td>
+            <td>Circunferencia</td><td>Pedal de una bicicleta</td>
+          </tr>
+          <tr>
+            <td class="key">
+              <svg class="icon-svg" viewBox="0 0 24 24" fill="none" stroke="#1e4e8c" stroke-width="2.5" stroke-linecap="round"><path d="M4 16a9 9 0 0 1 16 0"/><polyline points="6,12 4,16 8,17"/><polyline points="18,12 20,16 16,17"/></svg>Oscilante
+            </td>
+            <td>Arco de avance y retroceso</td><td>Péndulo</td>
+          </tr>
+        </tbody>
+      </table>
+    </section>
+
+    <!-- 6 -->
+    <section>
+      <div class="sec-title"><div class="num">6</div><h2>¿Para qué sirven los mecanismos?</h2></div>
+      <div class="tiles">
+        <div class="tile"><span class="emoji">🔄</span><strong>Transformar movimientos</strong><span>Motor de un coche</span></div>
+        <div class="tile"><span class="emoji">🏋️</span><strong>Modificar la fuerza</strong><span>Una prensa</span></div>
+        <div class="tile"><span class="emoji">⏱️</span><strong>Modificar la velocidad</strong><span>Cambios de una bicicleta</span></div>
+        <div class="tile"><span class="emoji">↩️</span><strong>Cambiar la dirección</strong><span>Polea simple</span></div>
+        <div class="tile"><span class="emoji">🌀</span><strong>Acumular energía</strong><span>Un muelle</span></div>
+      </div>
+      <div class="tags">
+        <span>Se clasifican en mecanismos de:</span>
+        <span class="tag">Transmisión del movimiento</span>
+        <span class="tag">Transformación del movimiento</span>
+      </div>
+    </section>
+
+    <!-- 7 -->
+    <section>
+      <div class="fact">
+        <div class="icon">🎨</div>
+        <div>
+          <h2>Dato curioso</h2>
+          <p><strong>Leonardo Da Vinci</strong> inventó muchas máquinas actuales (coches, aviones, lavadoras). Se basó en uno de los mecanismos más antiguos: el <strong>tornillo de Arquímedes</strong> (siglo III a. C.), usado para elevar agua desde un río. 💧</p>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer>Infografía · Clase: Mecanismos · Máquinas, Mecanismos y Movimientos</footer>
+</div>
+</body>
+</html>
